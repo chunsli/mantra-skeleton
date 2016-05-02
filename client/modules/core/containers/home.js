@@ -4,7 +4,8 @@ import Home from '../components/Home.js';
 
 const depsMapper = (context, actions) => ({
   context: () => context,
-  login: actions.account.login
+  login: actions.account.login,
+  create: actions.account.create,
 });
 
 export const composer = ({context}, onData) => {

@@ -10,10 +10,20 @@ class Home extends React.Component {
     this.state = {
       createAccount: false,
     };
+
+    this.handleCreate = () => this._handleCreate();
   }
 
   toggleState() {
     this.setState({createAccount: !this.state.createAccount});
+  }
+
+  _handleCreate() {
+    const { create } = this.props;
+
+    const username = this.username.getValue();
+    const password = this.password.getValue();
+    create(username, password);
   }
 
   renderLogin() {
@@ -25,12 +35,14 @@ class Home extends React.Component {
           hintText="Username"
           floatingLabelText="Username"
           style={styles.textfield}
+          ref={x => this.username = x}
         />
         <TextField
           hintText="Password Field"
           floatingLabelText="Password"
           type="password"
           style={styles.textfield}
+          ref={x => this.password = x}
         />
         <RaisedButton
           label="Login"
@@ -57,17 +69,20 @@ class Home extends React.Component {
           hintText="Username"
           floatingLabelText="Username"
           style={styles.textfield}
+          ref={x => this.username = x}
         />
         <TextField
           hintText="Password"
           floatingLabelText="Password"
           type="password"
           style={styles.textfield}
+          ref={x => this.password = x}
         />
         <RaisedButton
           label="Create Account"
           primary={true}
           style={styles.button}
+          onClick={this.handleCreate}
         />
         <a
           href=""

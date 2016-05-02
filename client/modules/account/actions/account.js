@@ -20,6 +20,7 @@ export default {
   },
 
   create({Meteor}, email, password) {
+    console.log(`create ${email} ${password}`)
     Accounts.createUser({email, password}, err => {
       if (err) { alert(err); }
     });
