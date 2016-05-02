@@ -2,6 +2,7 @@ import { Accounts } from 'meteor/accounts-base';
 
 export default {
   login({Meteor, FlowRouter}, email, password) {
+    console.log(`login ${email} ${password}`)
     Meteor.loginWithPassword(email, password, err => {
       if (err) { alert(err); }
     });

@@ -12,6 +12,7 @@ class Home extends React.Component {
     };
 
     this.handleCreate = () => this._handleCreate();
+    this.handleLogin = () => this._handleLogin();
   }
 
   toggleState() {
@@ -20,10 +21,16 @@ class Home extends React.Component {
 
   _handleCreate() {
     const { create } = this.props;
-
     const username = this.username.getValue();
     const password = this.password.getValue();
     create(username, password);
+  }
+
+  _handleLogin() {
+    const { login } = this.props;
+    const username = this.username.getValue();
+    const password = this.password.getValue();
+    login(username, password);
   }
 
   renderLogin() {
@@ -48,6 +55,7 @@ class Home extends React.Component {
           label="Login"
           primary={true}
           style={styles.button}
+          onClick={this.handleLogin}
         />
         <a
           href=""
