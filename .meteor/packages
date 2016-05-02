@@ -32,3 +32,4 @@ accounts-ui
 accounts-password
 
 # meson:electron
+stylus
