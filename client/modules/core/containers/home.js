@@ -8,12 +8,18 @@ const depsMapper = (context, actions) => ({
 
 export const composer = ({context}, onData) => {
   const {Meteor, FlowRouter, Collections} = context();
-  onData(null, {});
+  const { Likes } = Collections;
+
+  const sub = Meteor.subscribe('likes.list');
+  if (sub.ready()) {
+    const likes = Likes.find().fetch();
+    onData(null, {
+      likes
+    });
+  }
 };
 
 export default composeAll(
-  composeWithTracker(composer, function () {
-    return React.createElement('div', null);
-  }),
+  composeWithTracker(composer),
   useDeps(depsMapper)
 )(Home);
