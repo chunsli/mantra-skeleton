@@ -9,15 +9,7 @@ const depsMapper = (context, actions) => ({
 
 export const composer = ({context}, onData) => {
   const {Meteor, FlowRouter, Collections} = context();
-  const { Likes } = Collections;
-
-  const sub = Meteor.subscribe('likes.list');
-  if (sub.ready()) {
-    const likes = Likes.find().fetch();
-    onData(null, {
-      likes
-    });
-  }
+  onData(null, {});
 };
 
 export default composeAll(
