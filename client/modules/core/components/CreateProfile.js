@@ -6,6 +6,13 @@ import RadioButton from 'material-ui/lib/radio-button';
 
 class CreateProfile extends React.Component {
 
+  handleClick(url) {
+    const name = this.name.getValue();
+    const age = this.age.getValue();
+    const gender = this.gender.getSelectedValue();
+    this.props.createProfile(name, age, gender, url)
+  }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -25,6 +32,7 @@ class CreateProfile extends React.Component {
 	        <TextField
 	          hintText="Name"
 	          floatingLabelText="Name"
+            ref={x => this.name = x}
 	          style={styles.textfield}
 	        />
 	        <TextField
@@ -34,8 +42,9 @@ class CreateProfile extends React.Component {
 	          max = "65"
 	          type="number"
 	          style={styles.textfield}
+            ref={x => this.age = x}
 	        />
-	        <RadioButtonGroup name="gender" defaultSelected="male" style={styles.radioButtonGroup}>
+	        <RadioButtonGroup name="gender" defaultSelected="male" ref={x => this.gender = x} style={styles.radioButtonGroup}>
 		      <RadioButton
 		        value="male"
 		        label="Male"
@@ -51,6 +60,7 @@ class CreateProfile extends React.Component {
 	          label="Done"
 	          primary={true}
 	          style={styles.button}
+            onClick={this.handleClick.bind(this, src)}
 	        />
 	        
       </div>

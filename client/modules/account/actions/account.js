@@ -50,4 +50,10 @@ export default {
       if (err) { alert(err); }
     });
   },
+
+  createProfile({Meteor}, name, age, gender, url) {
+    Meteor.call('account.createProfile', {name, age, gender, url}, err => {
+      if (err) { alert(err); }
+    });
+  }
 };

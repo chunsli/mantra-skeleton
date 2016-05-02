@@ -3,7 +3,7 @@ import {mount} from 'react-mounter';
 
 import MainLayout from './components/main_layout.jsx';
 import Home from './containers/home';
-import CreateProfile from './components/CreateProfile';
+import CreateProfile from './containers/createProfile';
 
 export default function (injectDeps, {Meteor, FlowRouter, Collections, LocalState}) {
   const MainLayoutCtx = injectDeps(MainLayout);
