@@ -4,7 +4,7 @@ export default {
   },
 
   like({Meteor}, likeUserId) {
-    Meteor.call('interact.like', {likeUserId}, err => {
+    Meteor.call('likes.add', {likeUserId}, err => {
       if (err) { alert(err); }
     });
   },

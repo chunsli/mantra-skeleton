@@ -4,7 +4,7 @@ import { Likes } from '/lib/collections';
 
 export default function () {
   Meteor.methods({
-    'interact.like'({likeUserId}) {
+    'likes.add'({likeUserId}) {
       check(arguments[0], {
         likeUserId: String,
       });
