@@ -1,5 +1,5 @@
-import actions from './actions';
+import likes from './likes';
 
 export default {
-  actions
+  likes
 };

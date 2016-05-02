@@ -41,4 +41,10 @@ export default {
       if (err) { alert(err); }
     });
   },
+
+  setGender({Meteor}, gender) {
+    Meteor.call('account.setGender', {gender}, err => {
+      if (err) { alert(err); }
+    });
+  },
 };

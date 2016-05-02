@@ -52,4 +52,21 @@ export default function () {
       });
     }
   });
+
+  Meteor.methods({
+    'account.setGender'({gender}) {
+      check(arguments[0], {
+        gender: String,
+      });
+
+      const userId = this.userId;
+      if (!userId) {
+        throw new Meteor.Error('account.setGender', 'Must be logged in to set gender pic.');
+      }
+
+      Meteor.users.update(userId, {
+        $set: { gender },
+      });
+    }
+  });
 }
