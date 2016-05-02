@@ -1,6 +1,6 @@
 import React from 'react';
 import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
-import Home from '../components/Home.js';
+import CreateProfile from '../components/CreateProfile.js';
 
 const depsMapper = (context, actions) => ({
   context: () => context,
@@ -15,4 +15,4 @@ export const composer = ({context}, onData) => {
 export default composeAll(
   composeWithTracker(composer),
   useDeps(depsMapper)
-)(Home);
+)(CreateProfile);

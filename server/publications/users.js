@@ -8,11 +8,11 @@ export default function () {
 
     const options = {
       fields: {
-        displayName: 1,
         emails: 1,
-        profileImageUrl: 1,
+        name: 1,
         age: 1,
         gender: 1,
+        url: 1,
       },
     };
 
