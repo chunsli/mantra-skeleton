@@ -1,3 +1,5 @@
+import { Accounts } from 'meteor/accounts-base';
+
 export default {
   login({Meteor, FlowRouter}, email, password) {
     Meteor.loginWithPassword(email, password, err => {
@@ -32,12 +34,12 @@ export default {
   setAge({Meteor}, age) {
     Meteor.call('account.setAge', {age}, err => {
       if (err) { alert(err); }
-    })
+    });
   },
 
-  setProfilePic({Meteor}, ) {
-    Meteor.call('account.setProfilePic'. {url}, err => {
+  setProfilePic({Meteor}, url) {
+    Meteor.call('account.setProfilePic', {url}, err => {
       if (err) { alert(err); }
     });
   },
- };
+};

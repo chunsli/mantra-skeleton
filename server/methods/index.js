@@ -3,5 +3,5 @@ import account from './accounts';
 
 export default function () {
   methods();
-  accounts();
+  account();
 }

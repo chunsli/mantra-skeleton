@@ -4,9 +4,9 @@ import { Likes } from '/lib/collections';
 
 export default function () {
   Meteor.methods({
-    'interact.like'({lookingAtUserId}) {
+    'interact.like'({likeUserId}) {
       check(arguments[0], {
-        lookingAtUserId: String,
+        likeUserId: String,
       });
 
       const userId = this.userId;
@@ -16,7 +16,7 @@ export default function () {
 
       Likes.upsert({
         userId,
-        likeUserId: lookingAtUserId,
+        likeUserId,
       });
     }
   });
