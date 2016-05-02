@@ -5,9 +5,6 @@ export default {
     console.log(`login ${email} ${password}`)
     Meteor.loginWithPassword(email, password, err => {
       if (err) { alert(err); }
-      else {
-        FlowRouter.go('/CreateProfile');
-      }
     });
   },
 
@@ -24,6 +21,9 @@ export default {
     console.log(`create ${email} ${password}`)
     Accounts.createUser({email, password}, err => {
       if (err) { alert(err); }
+      else {
+        FlowRouter.go('/CreateProfile');
+      }
     });
   },
 
