@@ -11,7 +11,8 @@ export default function () {
         displayName: 1,
         emails: 1,
         profileImageUrl: 1,
-        description: 1,
+        age: 1,
+        gender: 1,
       },
     };
 
