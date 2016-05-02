@@ -4,6 +4,7 @@ import {mount} from 'react-mounter';
 import MainLayout from './components/main_layout.jsx';
 import Home from './containers/home';
 import CreateProfile from './components/CreateProfile';
+import ViewProfile from './components/ViewProfile';
 
 export default function (injectDeps, {Meteor, FlowRouter, Collections, LocalState}) {
   const MainLayoutCtx = injectDeps(MainLayout);
@@ -26,5 +27,13 @@ export default function (injectDeps, {Meteor, FlowRouter, Collections, LocalStat
     }
   });
 
+  FlowRouter.route('/ViewProfile', {
+    name: 'ViewProfile',
+    action() {
+      mount(MainLayoutCtx, {
+        content: () => (<ViewProfile />)
+      });
+    }
+  });
 
 }
