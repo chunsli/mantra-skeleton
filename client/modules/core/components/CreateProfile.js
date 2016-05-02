@@ -13,49 +13,48 @@ class CreateProfile extends React.Component {
   }
 
   render() {
-  	const src = "http://www.placecage.com/" + Math.floor(Math.random() * 1000 + 200) + "/" + Math.floor(Math.random() * 1000 + 200)
+    const rand1 = Math.floor(Math.random() * 1000 + 200);
+    const rand2 = Math.floor(Math.random() * 1000 + 200);
+    const src = `http://www.placecage.com/${rand1}/${rand2}`;
     return (
-  		
-		<div style={styles.container}>
-			<h1> Create Profile </h1>
-	        <img
-	       	  src={src}
-	       	  style={styles.img}
-       	  	/>
-	        <TextField
-	          hintText="Name"
-	          floatingLabelText="Name"
-	          style={styles.textfield}
-	        />
-	        <TextField
-	          hintText="Age"
-	          floatingLabelText="Age"
-	          min = "18"
-	          max = "65"
-	          type="number"
-	          style={styles.textfield}
-	        />
-	        <RadioButtonGroup name="gender" defaultSelected="male" style={styles.radioButtonGroup}>
-		      <RadioButton
-		        value="male"
-		        label="Male"
-		        style={styles.radioButton}
-		      />
-		      <RadioButton
-		        value="female"
-		        label="Female"
-		        style={styles.radioButton}
-		      />
-		    </RadioButtonGroup>
-	        <RaisedButton
-	          label="Done"
-	          primary={true}
-	          style={styles.button}
-	        />
-	        
+      <div style={styles.container}>
+        <h1> Create Profile </h1>
+        <img
+          src={src}
+          style={styles.img}
+        />
+        <TextField
+          hintText="Name"
+          floatingLabelText="Name"
+          style={styles.textfield}
+        />
+        <TextField
+          hintText="Age"
+          floatingLabelText="Age"
+          min = "18"
+          max = "65"
+          type="number"
+          style={styles.textfield}
+        />
+        <RadioButtonGroup name="gender" defaultSelected="male" style={styles.radioButtonGroup}>
+          <RadioButton
+            value="male"
+            label="Male"
+            style={styles.radioButton}
+          />
+          <RadioButton
+            value="female"
+            label="Female"
+            style={styles.radioButton}
+          />
+        </RadioButtonGroup>
+        <RaisedButton
+          label="Done"
+          primary={true}
+          style={styles.button}
+        />
       </div>
-
-    	)
+    );
   }
 }
 
@@ -68,21 +67,20 @@ const styles = {
     height: '100%',
     margin: '15px',
   },
-  toolbar:{
-  	width:'100%',
+  toolbar: {
+    width: '100%',
   },
- 
   radioButtonGroup: {
-  	display: 'flex',
-  	justifyContent:'center',
+    display: 'flex',
+    justifyContent: 'center',
   },
-  radioButton:{
-  	width:'auto',
-  	margin:'15px',
+  radioButton: {
+    width: 'auto',
+    margin: '15px',
   },
   img: {
-  	maxHeight: '300px',
-  	maxWidth: '200px',
+    maxHeight: '300px',
+    maxWidth: '200px',
   },
   textfield: {
     margin: '5px',
