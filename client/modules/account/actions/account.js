@@ -4,9 +4,6 @@ export default {
   login({Meteor, FlowRouter}, email, password) {
     Meteor.loginWithPassword(email, password, err => {
       if (err) { alert(err); }
-      else {
-        FlowRouter.go('/main');
-      }
     });
   },
 
