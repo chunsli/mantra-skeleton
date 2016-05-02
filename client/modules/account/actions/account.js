@@ -27,31 +27,8 @@ export default {
     });
   },
 
-  setName({Meteor}, name) {
-    Meteor.call('account.setName', {name}, err => {
-      if (err) { alert(err); }
-    });
-  },
-
-  setAge({Meteor}, age) {
-    Meteor.call('account.setAge', {age}, err => {
-      if (err) { alert(err); }
-    });
-  },
-
-  setProfilePic({Meteor}, url) {
-    Meteor.call('account.setProfilePic', {url}, err => {
-      if (err) { alert(err); }
-    });
-  },
-
-  setGender({Meteor}, gender) {
-    Meteor.call('account.setGender', {gender}, err => {
-      if (err) { alert(err); }
-    });
-  },
-
   createProfile({Meteor}, name, age, gender, url) {
+    console.log(`createProfile ${name} ${age} ${gender} ${url}`)
     Meteor.call('account.createProfile', {name, age, gender, url}, err => {
       if (err) { alert(err); }
     });
